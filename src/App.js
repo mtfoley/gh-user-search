@@ -8,6 +8,7 @@ function App() {
   const [results,setResults] = useState({items:[],total_count:0});
   const [page,setPage] = useState(1);
   const runSearch = (value,newPage) => {
+    if(value.trim() == "") return;
     if(isNaN(newPage)) newPage = 1;
     let url = 'https://api.github.com/search/users';
     url += '?q='+encodeURIComponent(value)
