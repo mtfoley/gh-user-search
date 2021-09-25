@@ -2,12 +2,17 @@ function SearchPaging({page,perPage,totalCount,onNextPage,onPrevPage}){
     return (
         <div className="">
             <span className="">
+                {totalCount >= 1 ?
+                    `${totalCount} Results`
+                : null}
+            </span>
+            <span className="">
                 {page > 1 ?
                     <button className="" onClick={onPrevPage}>Prev</button>
                 : null}
             </span>
             <span className="">
-                {totalCount > perPage ?
+                {totalCount > (page * perPage) ?
                     <button className="" onClick={onNextPage}>Next</button>
                 : null}
             </span>
