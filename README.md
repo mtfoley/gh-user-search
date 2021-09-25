@@ -1,5 +1,4 @@
-# gh-user-search
-GitHub User Search
+# GitHub User Search
 As a user,
 - [x] I can search for users and see a paginated list of results
 - [x] I can navigate through the next and previous pages of the paginated results
