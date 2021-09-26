@@ -10,6 +10,13 @@ const classNames = {
     searchResultLink:"",
     searchInput:"form-input px-4 py-3 rounded-lg w-max",
     searchBtn:"flex float-right ml-auto",
-    searchForm:""
+    searchForm:"",
+    searchResultDetail:"",
+    searchResultDetailBio:"",
+    searchResultDetailImage:"",
+    searchResultUsername:"",
+    searchResultDetailLabel:"",
+    searchResultDetailValue:"",
+    searchResultDetailIcon:""
 }
 export default classNames;
