@@ -18,14 +18,12 @@ function SearchResultDetail({userDetails}){
                         <dd>{userDetails.company}</dd>
                     </>
                 }
-            </dl>
                 {userDetails.location && 
                     <>
                         <dt>Location</dt>
                         <dd>{userDetails.location}</dd>
                     </>
                 }
-            <dl>
                 {userDetails.blog && 
                     <>
                         <dt>Blog</dt>
