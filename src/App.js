@@ -3,6 +3,7 @@ import SearchForm from './components/SearchForm';
 import SearchResultList from './components/SearchResultList';
 import SearchPaging from './components/SearchPaging';
 let userDetailsCache = {};
+
 function App() {
   const perPage = 20;
   const [search,setSearch] = useState("");
@@ -13,7 +14,7 @@ function App() {
     if(value.trim() === "") return;
     if(isNaN(newPage)) newPage = 1;
     let url = 'https://api.github.com/search/users';
-    url += '?q='+encodeURIComponent(value)
+    url += '?q='+encodeURIComponent(`${value} in:login`)
         + '&per_page='+perPage
         + '&page='+newPage;
     fetch(url,{
