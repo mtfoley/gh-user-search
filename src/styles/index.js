@@ -17,6 +17,7 @@ const classNames = {
     searchResultUsername:"",
     searchResultDetailLabel:"",
     searchResultDetailValue:"",
-    searchResultDetailIcon:""
+    searchResultDetailIcon:"",
+    errorMessage:"w-full text-center text-red-500",
 }
 export default classNames;

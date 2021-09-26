@@ -10,6 +10,7 @@ function App() {
   const [results,setResults] = useState({items:[],total_count:0});
   const [page,setPage] = useState(1);
   const [userDetails,setUserDetails] = useState(null);
+  const [error,setError] = useState("loading error");
   const runSearch = (value,newPage) => {
     if(value.trim() === "") return;
     if(isNaN(newPage)) newPage = 1;
@@ -30,6 +31,9 @@ function App() {
       setPage(newPage);
       setResults(data);
       setUserDetails(null);
+    })
+    .catch(error => {
+      setError(error);
     });
   };
   const getUserDetails = (login)=>{
@@ -53,13 +57,16 @@ function App() {
     .then(data => {
       userDetailsCache[login] = data;
       setUserDetails(data);
+    })
+    .catch(error => {
+      setError(error);
     });
   };
   const onNextPage = ()=>{
-    runSearch(search,page+1);
+    if(userDetails === null) runSearch(search,page+1);
   }
   const onPrevPage = ()=>{
-    runSearch(search,page-1);
+    if(userDetails === null) runSearch(search,page-1);
   }
   return (
     <div className="App">
@@ -71,6 +78,7 @@ function App() {
         perPage={perPage} 
         totalCount={results.total_count} />
       <SearchResultList
+        error={error}
         userDetails={userDetails}
         getUserDetails={getUserDetails} 
         search={search} 
