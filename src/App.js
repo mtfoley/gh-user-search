@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import SearchForm from './components/SearchForm';
+import SearchControls from './components/SearchControls';
 import SearchResultList from './components/SearchResultList';
-import SearchPaging from './components/SearchPaging';
+import SearchResultDetail from './components/SearchResultDetail';
 let userDetailsCache = {};
 
 function App() {
@@ -69,9 +69,9 @@ function App() {
     if(userDetails === null) runSearch(search,page-1);
   }
   return (
-    <div className="App">
-      <SearchForm onSubmit={runSearch} />
-      <SearchPaging
+    <div className="App bg-purple-50 h-screen">
+      <SearchControls 
+        onSubmit={runSearch} 
         onNextPage={onNextPage} 
         onPrevPage={onPrevPage} 
         userDetails={userDetails}
@@ -79,12 +79,14 @@ function App() {
         page={page}  
         perPage={perPage} 
         totalCount={results.total_count} />
-      <SearchResultList
+      {userDetails === null && <SearchResultList
         error={error}
         userDetails={userDetails}
         getUserDetails={getUserDetails} 
         search={search} 
-        items={results.items} />
+        items={results.items} /> }
+      {error === null && userDetails && <SearchResultDetail userDetails={userDetails} getUserDetails={getUserDetails} />}
+
     </div>
   );
 }
