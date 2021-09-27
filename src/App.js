@@ -39,7 +39,6 @@ function App() {
     });
   };
   const getUserDetails = (login)=>{
-    console.log(`Cache Keys: ${Object.keys(userDetailsCache).join(',')}`)
     if(login === null){
       setUserDetails(null);
       return;
