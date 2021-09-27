@@ -1,5 +1,4 @@
 import SearchResult from "./SearchResult";
-import SearchResultDetail from "./SearchResultDetail";
 import classNames from "../styles";
 function SearchResultList({items,userDetails,getUserDetails,error}){
     return (

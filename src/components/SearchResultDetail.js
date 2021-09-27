@@ -1,9 +1,6 @@
 import { PeopleIcon, PersonIcon, RepoIcon, LocationIcon, LinkExternalIcon, MarkGithubIcon } from "@primer/octicons-react";
 import classNames from "../styles";
 function SearchResultDetail({userDetails}){
-    const statsImageUrl = (login)=>{
-        return `https://github-readme-stats.vercel.app/api?username=${login}`;
-    }
     return (
         <div className={classNames.searchResultDetail}>
             <img
