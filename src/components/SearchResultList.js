@@ -11,7 +11,7 @@ function SearchResultList({items,userDetails,getUserDetails,error}){
                     return <SearchResult result={result} key={result.id} getUserDetails={getUserDetails} />
                 })}
             </div>} 
-            {error === null && userDetails && <SearchResultDetail userDetails={userDetails} />}
+            {error === null && userDetails && <SearchResultDetail userDetails={userDetails} getUserDetails={getUserDetails} />}
         </div>
     );
 }
