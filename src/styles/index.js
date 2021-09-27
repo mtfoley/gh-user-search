@@ -3,7 +3,7 @@ const classNames = {
     pagingCount:"text-center py-2 px-4 align-middle w-96",
     pagingNextBtn:"bg-purple-500 hover:bg-purple-700 text-white w-8 h-8 font-bold border border-purple-700 rounded-r-md",
     pagingPrevBtn:"bg-purple-500 hover:bg-purple-700 text-white w-8 h-8 font-bold border border-purple-700 rounded-l-md",
-    resultsGrid:"p-8 pt-24 grid grid-cols-5 gap-4 bg-purple-50",
+    resultsGrid:"p-8 pt-32 grid grid-cols-5 gap-4 bg-purple-50",
     searchResult:"px-0 shadow-md rounded-lg bg-white border border-purple-300",
     searchResultImage:"rounded-t-lg min-w-full min-h-full bg-white",
     searchResultName:"text-center pb-4 pt-4 rounded-b-lg bg-white text-purple-400",

@@ -10,7 +10,7 @@ function SearchControls({onSubmit,page,perPage,totalCount,onNextPage,onPrevPage,
     }
     return (
         <div className={classNames.searchControls}>
-            <h2>GitHub User Search</h2>
+            <h2 className="text-xl text-purple-500">GitHub User Search</h2>
             <input type="search" className={classNames.searchInput} placeholder="Username" onChange={onSearchChange} />
             <button className={classNames.searchBtn} onClick={()=>onSubmit(term)}>Search</button>
             {userDetails === null 
