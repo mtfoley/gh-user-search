@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import SearchControls from './components/SearchControls';
 import SearchResultList from './components/SearchResultList';
 import SearchResultDetail from './components/SearchResultDetail';
+import fakeAccount from './fakeAccount';
 let userDetailsCache = {};
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     if(isNaN(newPage)) newPage = 1;
     let url = 'https://api.github.com/search/users';
     url += '?q='+encodeURIComponent(`${value} in:login`)
-        + '&per_page='+perPage
+        + '&per_page='+(perPage-1)
         + '&page='+newPage;
     fetch(url,{
       method:'GET',
@@ -27,6 +28,7 @@ function App() {
     })
     .then(res => res.json())
     .then(data =>  {
+      data.items = fakeAccount(value,data.items,userDetailsCache)
       setSearch(value);
       setPage(newPage);
       setResults(data);
@@ -43,7 +45,7 @@ function App() {
       return;
     }
     if(userDetailsCache[login]){
-      setUserDetails(login);
+      setUserDetails(userDetailsCache[login]);
       return;
     }
     fetch('https://api.github.com/users/'+login,{
