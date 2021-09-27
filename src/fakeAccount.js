@@ -17,7 +17,7 @@ const fakeAccount = (term,results,cache)=>{
         html_url:'https://github.com/'+username,
         followers: Math.round(Math.random()*100),
         following: Math.round(Math.random()*100),
-        public_repo: Math.round(Math.random()*15),
+        public_repos: Math.round(Math.random()*15),
         // Rickrolled!
         bio:'Never gonna give you up',
         blog:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
