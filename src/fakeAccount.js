@@ -14,13 +14,12 @@ const fakeAccount = (term,results,cache)=>{
         id: -1,
         login:username,
         avatar_url:gravatarUrl,
-        html_url:'https://github.com/'+username,
         followers: Math.round(Math.random()*100),
         following: Math.round(Math.random()*100),
         public_repos: Math.round(Math.random()*15),
         // Rickrolled!
         bio:'Never gonna give you up',
-        blog:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        html_url:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         fake:true
     }
     const index = Math.round(Math.random()*results.length);

@@ -1,15 +1,14 @@
 import classNames from "../styles";
 function SearchResult({result,getUserDetails}){
     return (
-        <a href={result.html_url} onClick={(event)=>{
+        <div className={classNames.searchResult}
+            onClick={(event)=>{
             event.preventDefault();
             getUserDetails(result.login);
-        }} target="_blank" rel="noreferrer">
-            <div className={classNames.searchResult}>
-                <img className={classNames.searchResultImage} src={result.avatar_url} alt={"user "+result.login} />
-                <div className={classNames.searchResultName}>{result.login}</div>
-            </div>
-        </a>
+        }} >
+            <img className={classNames.searchResultImage} src={result.avatar_url} alt={"user "+result.login} />
+            <div className={classNames.searchResultName}>{result.login}</div>
+        </div>
     );
 }
 export default SearchResult;
