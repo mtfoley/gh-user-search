@@ -20,12 +20,12 @@ function SearchControls({onSubmit,page,perPage,totalCount,onNextPage,onPrevPage,
                         `${totalCount} Results`
                     : null}
                 </span>
-                <button disabled={!prevEnabled} className={classNames.pagingPrevBtn} onClick={onPrevPage}>
+                { totalCount > 0 && <button disabled={!prevEnabled} className={classNames.pagingPrevBtn} onClick={onPrevPage}>
                     <ArrowLeftIcon size={16} />
-                </button>
-                <button disabled={!nextEnabled} className={classNames.pagingNextBtn} onClick={onNextPage}>
+                </button> }
+                { totalCount > 0 && <button disabled={!nextEnabled} className={classNames.pagingNextBtn} onClick={onNextPage}>
                     <ArrowRightIcon size={16} />
-                </button>
+                </button> }
                 </>
                 : <button className="pull-right" onClick={()=>getUserDetails(null)}><XCircleIcon size={24} /> Back to Results</button>
             }
