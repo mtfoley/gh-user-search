@@ -10,7 +10,7 @@ function App() {
   const [results,setResults] = useState({items:[],total_count:0});
   const [page,setPage] = useState(1);
   const [userDetails,setUserDetails] = useState(null);
-  const [error,setError] = useState("loading error");
+  const [error,setError] = useState(null);
   const runSearch = (value,newPage) => {
     if(value.trim() === "") return;
     if(isNaN(newPage)) newPage = 1;
@@ -74,6 +74,8 @@ function App() {
       <SearchPaging
         onNextPage={onNextPage} 
         onPrevPage={onPrevPage} 
+        userDetails={userDetails}
+        getUserDetails={getUserDetails}
         page={page}  
         perPage={perPage} 
         totalCount={results.total_count} />
